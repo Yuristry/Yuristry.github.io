@@ -1,108 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>JavaScript学习笔记</title>
-      <link href="2020/12/11/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-      <url>2020/12/11/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h3>好记性不如烂笔头</h3>所以来记录下自己的JavaScript学习旅程<a id="more"></a><h3>==与===</h3><p>==自动转换类型比较 ===不转换</p><p>if（Num===1){</p><p>console.log(‘mmmm’);</p><p>}</p><p><img src="https://i.loli.net/2020/12/11/UqX3tiKs2l4uv1f.png" alt="image-20201206190509675"></p><p>类 中间定义的属性和方法需要this</p><p>类 function Book(…,…,…){</p><p>this.title=…;</p><p>this.ppp=…;</p><p>this.dfsfs =function(){</p><p>bulubulu;</p><p>};</p><p>};</p><p><img src="https://i.loli.net/2020/12/11/eBf4Tn3woR1drYa.png" alt="image-20201206193308883.png"></p><p><a href="https://developer.chrome.com/devtools/docs/javascript-debugging">调试学习</a>。</p><p><img src="https://i.loli.net/2020/12/11/BivyQPJZUGaTw7r.png" alt="image-20201206201401275.png"></p><p><a href="https://babeljs.io/repl/">https://babeljs.io/repl/</a></p><p>用<em>let</em>代替<strong>var</strong>声明变量</p><p>const定义的量是只读的 </p><p>const 的 对象的引用被锁死 但对象里的属性仍可以被改变 </p><h3 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h3><p>使用’`’来包围</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`你正在阅读<span class="subst">$&#123;book.name&#125;</span>。</span></span><br><span class="line"><span class="string">  这是新的一行</span></span><br><span class="line"><span class="string">  这也是。`</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;你正在阅读&#x27;</span> + book.name + <span class="string">&#x27;.,\n这是新的一行\n 这也是&#x27;</span>);</span><br></pre></td></tr></table></figure><p>可以省略/n</p><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> circleArea2 = <span class="function"><span class="params">r</span> =&gt;</span> <span class="number">3.14</span> * r * r; <span class="comment">//r为传入的参数</span></span><br><span class="line"><span class="built_in">console</span>.log(circleArea2(<span class="number">2</span>));<span class="comment">//省略了function</span></span><br></pre></td></tr></table></figure><h3 id="使用arguments"><a href="#使用arguments" class="headerlink" title="使用arguments"></a>使用arguments</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="built_in">arguments</span>.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">0</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">0</span>]</span><br><span class="line">: <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="built_in">arguments</span>.length &gt; <span class="number">1</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">1</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>]</span><br><span class="line">: <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">var</span> z = <span class="built_in">arguments</span>.length &gt; <span class="number">2</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">2</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">2</span>]</span><br><span class="line">: <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">return</span> x + y + z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="声明展开和剩余参数"><a href="#声明展开和剩余参数" class="headerlink" title="声明展开和剩余参数"></a>声明展开和剩余参数</h3><p><img src="https://i.loli.net/2020/12/11/JLDI6hWrbgYGfwk.png" alt="image-20201206220329297.png"></p><p>其中 a 为【”hello”,true,7】</p><h3 id="ES2015的一些改进"><a href="#ES2015的一些改进" class="headerlink" title="ES2015的一些改进"></a>ES2015的一些改进</h3><p>私有属性的get与set</p><p>可以用_name 下划线 来定义“私有属性”</p><p><img src="https://i.loli.net/2020/12/11/JLnfRSjiYzCwmsH.png" alt="image-20201207134516133.png"></p><p>乘方 3.14*（r**2）或者Math.pow(r, 2)</p><p><code>你可以在https://developer.mozilla.org/zh-CN/docs/Web/JavaScript查阅JavaScript和ECMAScript的完整功能列表。</code></p><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p><code>const circleArea = r=&gt;...</code></p><p><code>const circleArea = r=&gt;...</code></p><p><code>export &#123;circle, squareArea&#125;</code></p><p>使用<strong>export</strong>可以将这两个函数暴露出来</p><p><img src="https://i.loli.net/2020/12/11/amszWdjNCou153h.png" alt="image-20201207164001330.png"></p><h3 id="TYPEscript的新特点"><a href="#TYPEscript的新特点" class="headerlink" title="TYPEscript的新特点"></a>TYPEscript的新特点</h3><p><a href="https://www.typescriptlang.org/zh/play#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EA47QBTlAudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aPAA7QjQcADMAQyw0UAAFQ4BnAHtdgG8aAEhdk4BbNAAuG8J8XYAcwA3K8ToCfrsAK4fABGh1BAF8aEcobssIQ8A9QCgAYQAHKfNAACnQOHuu2+V1uDwAlM8XlgHvcADZoAB0LLugNJNN27PeX1pSJoTN2f1AACs7gALXagAC8oEegp+AHIAFKy3ZqgA0oHBPwATABGRGgsUShB3D6K5Wq75q60fPUGiHfI1G800XF7AlE4nSuXCn14wlfYnOkP0UyATodAN+KgCg5eyqUCAHAJAFyegGj5QC4BKBAGhG6cADaaAb9Sc1QTIAwuUAx5GAF7NAFiagGdFfo1QAAUapAIfygHsDbQAIl8+cAoAGAAiVACZpDEA2XKAC5tAFOJDUAKHKAAH1ANOabiogBdTNjkCiqQBocoAZV0AvwmAPR1+lxdH4gA">TypeScript: 游乐场 - 一个用于 TypeScript 和 JavaScript 的在线编辑器 (typescriptlang.org)</a></p><h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><h3 id="ARRAY"><a href="#ARRAY" class="headerlink" title="ARRAY"></a>ARRAY</h3><p>数组，push </p><p>numbers.push(11);</p><p>numbers[numbers.length] = 10;</p><p>JavaScript中unshift可以将数值插入开头</p><p>要删除数组的第一个元素可以用shift方法实现number.shift();</p><p>在任意位置添加或删除元素 splice（5，3）删掉5，6，7</p><p>splice pop shift用这三个</p><p>splice(5,0,2,3,4) 传入0代表插入 </p><p>（2，3，4）</p><blockquote><ul><li><code>concat</code></li><li><code>every</code></li><li><code>filter</code></li><li><code>forEach</code></li><li><code>join</code></li><li><code>indexOf</code></li><li><code>lastIndexOf</code></li><li><code>map</code></li><li><code>reverse</code></li><li><code>slice</code></li><li><code>some</code></li><li><code>sort</code></li><li><code>toString</code></li><li><code>valueOf</code></li></ul></blockquote><p><code>map filter reduce</code></p><table><thead><tr><th align="center">方法</th><th align="center">描述</th></tr></thead><tbody><tr><td align="center"><code>@@iterator</code></td><td align="center">返回一个包含数组键值对的迭代器对象，可以通过同步调用得到数组元素的键值对</td></tr><tr><td align="center"><code>copyWithin</code></td><td align="center">复制数组中一系列元素到同一数组指定的起始位置</td></tr><tr><td align="center"><code>entries</code></td><td align="center">返回包含数组所有键值对的<code>@@iterator</code></td></tr><tr><td align="center"><code>includes</code></td><td align="center">如果数组中存在某个元素则返回<code>true</code>，否则返回<code>false</code>。E2016新增</td></tr><tr><td align="center"><code>find</code></td><td align="center">根据回调函数给定的条件从数组中查找元素，如果找到则返回该元素</td></tr><tr><td align="center"><code>findIndex</code></td><td align="center">根据回调函数给定的条件从数组中查找元素，如果找到则返回该元素在数组中的索引</td></tr><tr><td align="center"><code>fill</code></td><td align="center">用静态值填充数组</td></tr><tr><td align="center"><code>from</code></td><td align="center">根据已有数组创建一个新数组</td></tr><tr><td align="center"><code>keys</code></td><td align="center">返回包含数组所有索引的<code>@@iterator</code></td></tr><tr><td align="center"><code>of</code></td><td align="center">根据传入的参数创建一个新数组</td></tr><tr><td align="center"><code>values</code></td><td align="center">返回包含数组中所有值的<code>@@iterator</code></td></tr></tbody></table><table><thead><tr><th align="center">方法</th><th align="center">描述</th></tr></thead><tbody><tr><td align="center"><code>concat</code></td><td align="center">连接2个或更多数组，并返回结果</td></tr><tr><td align="center"><code>every</code></td><td align="center">对数组中的每个元素运行给定函数，如果该函数对每个元素都返回<code>true</code>，则返回<code>true</code></td></tr><tr><td align="center"><code>filter</code></td><td align="center">对数组中的每个元素运行给定函数，返回该函数会返回<code>true</code>的元素组成的数组</td></tr><tr><td align="center"><code>forEach</code></td><td align="center">对数组中的每个元素运行给定函数。这个方法没有返回值</td></tr><tr><td align="center"><code>join</code></td><td align="center">将所有的数组元素连接成一个字符串</td></tr><tr><td align="center"><code>indexOf</code></td><td align="center">返回第一个与给定参数相等的数组元素的索引，没有找到则返回<code>-1</code></td></tr><tr><td align="center"><code>lastIndexOf</code></td><td align="center">返回在数组中搜索到的与给定参数相等的元素的索引里最大的值</td></tr><tr><td align="center"><code>map</code></td><td align="center">对数组中的每个元素运行给定函数，返回每次函数调用的结果组成的数组</td></tr><tr><td align="center"><code>reverse</code></td><td align="center">颠倒数组中元素的顺序，原先第一个元素现在变成最后一个，同样原先的最后一个元素变成了现在的第一个</td></tr><tr><td align="center"><code>slice</code></td><td align="center">传入索引值，将数组里对应索引范围内的元素作为新数组返回</td></tr><tr><td align="center"><code>some</code></td><td align="center">对数组中的每个元素运行给定函数，如果任一元素返回<code>true</code>，则返回<code>true</code></td></tr><tr><td align="center"><code>sort</code></td><td align="center">按照字母顺序对数组排序，支持传入指定排序方法的函数作为参数</td></tr><tr><td align="center"><code>toString</code></td><td align="center">将数组作为字符串返回</td></tr><tr><td align="center"><code>valueOf</code></td><td align="center">和<code>toString</code>类似，将数组作为字符串返回</td></tr></tbody></table><h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>FIFO先进先出</p><p><img src="https://i.loli.net/2020/12/11/AShytYDs1eXqpza.png" alt="image-20201208153935864.png"></p><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>已读完前面5章基础部分</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>JavaScript学习笔记</title>
+    <url>/2020/12/11/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>好记性不如烂笔头</p>
+</blockquote>
+<blockquote>
+<p>所以来记录下自己的JavaScript学习旅程</p>
+</blockquote>
+<a id="more"></a>
+
+<h3>==与===</h3>
+
+<p>==自动转换类型比较 ===不转换</p>
+<p>if（Num===1){</p>
+<p>console.log(‘mmmm’);</p>
+<p>}</p>
+<p><img src="https://i.loli.net/2020/12/11/UqX3tiKs2l4uv1f.png" alt="image-20201206190509675"></p>
+<p>类 中间定义的属性和方法需要this</p>
+<p>类 function Book(…,…,…){</p>
+<p>this.title=…;</p>
+<p>this.ppp=…;</p>
+<p>this.dfsfs =function(){</p>
+<p>bulubulu;</p>
+<p>};</p>
+<p>};</p>
+<p><img src="https://i.loli.net/2020/12/11/eBf4Tn3woR1drYa.png" alt="image-20201206193308883.png"></p>
+<p><a href="https://developer.chrome.com/devtools/docs/javascript-debugging">调试学习</a>。</p>
+<p><img src="https://i.loli.net/2020/12/11/BivyQPJZUGaTw7r.png" alt="image-20201206201401275.png"></p>
+<p><a href="https://babeljs.io/repl/">https://babeljs.io/repl/</a></p>
+<p>用<em>let</em>代替<strong>var</strong>声明变量</p>
+<p>const定义的量是只读的 </p>
+<p>const 的 对象的引用被锁死 但对象里的属性仍可以被改变 </p>
+<h3 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h3><p>使用’`’来包围</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`你正在阅读<span class="subst">$&#123;book.name&#125;</span>。</span></span><br><span class="line"><span class="string">  这是新的一行</span></span><br><span class="line"><span class="string">  这也是。`</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;你正在阅读&#x27;</span> + book.name + <span class="string">&#x27;.,\n这是新的一行\n 这也是&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以省略/n</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> circleArea2 = <span class="function"><span class="params">r</span> =&gt;</span> <span class="number">3.14</span> * r * r; <span class="comment">//r为传入的参数</span></span><br><span class="line"><span class="built_in">console</span>.log(circleArea2(<span class="number">2</span>));<span class="comment">//省略了function</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用arguments"><a href="#使用arguments" class="headerlink" title="使用arguments"></a>使用arguments</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="built_in">arguments</span>.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">0</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">0</span>]</span><br><span class="line">: <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> y = <span class="built_in">arguments</span>.length &gt; <span class="number">1</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">1</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>]</span><br><span class="line">: <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">var</span> z = <span class="built_in">arguments</span>.length &gt; <span class="number">2</span> &amp;&amp; <span class="built_in">arguments</span>[<span class="number">2</span>] !== <span class="literal">undefined</span> ? <span class="built_in">arguments</span>[<span class="number">2</span>]</span><br><span class="line">: <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">return</span> x + y + z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="声明展开和剩余参数"><a href="#声明展开和剩余参数" class="headerlink" title="声明展开和剩余参数"></a>声明展开和剩余参数</h3><p><img src="https://i.loli.net/2020/12/11/JLDI6hWrbgYGfwk.png" alt="image-20201206220329297.png"></p>
+<p>其中 a 为【”hello”,true,7】</p>
+<h3 id="ES2015的一些改进"><a href="#ES2015的一些改进" class="headerlink" title="ES2015的一些改进"></a>ES2015的一些改进</h3><p>私有属性的get与set</p>
+<p>可以用_name 下划线 来定义“私有属性”</p>
+<p><img src="https://i.loli.net/2020/12/11/JLnfRSjiYzCwmsH.png" alt="image-20201207134516133.png"></p>
+<p>乘方 3.14*（r**2）或者Math.pow(r, 2)</p>
+<p><code>你可以在https://developer.mozilla.org/zh-CN/docs/Web/JavaScript查阅JavaScript和ECMAScript的完整功能列表。</code></p>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p><code>const circleArea = r=&gt;...</code></p>
+<p><code>const circleArea = r=&gt;...</code></p>
+<p><code>export &#123;circle, squareArea&#125;</code></p>
+<p>使用<strong>export</strong>可以将这两个函数暴露出来</p>
+<p><img src="https://i.loli.net/2020/12/11/amszWdjNCou153h.png" alt="image-20201207164001330.png"></p>
+<h3 id="TYPEscript的新特点"><a href="#TYPEscript的新特点" class="headerlink" title="TYPEscript的新特点"></a>TYPEscript的新特点</h3><p><a href="https://www.typescriptlang.org/zh/play#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EA47QBTlAudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aPAA7QjQcADMAQyw0UAAFQ4BnAHtdgG8aAEhdk4BbNAAuG8J8XYAcwA3K8ToCfrsAK4fABGh1BAF8aEcobssIQ8A9QCgAYQAHKfNAACnQOHuu2+V1uDwAlM8XlgHvcADZoAB0LLugNJNN27PeX1pSJoTN2f1AACs7gALXagAC8oEegp+AHIAFKy3ZqgA0oHBPwATABGRGgsUShB3D6K5Wq75q60fPUGiHfI1G800XF7AlE4nSuXCn14wlfYnOkP0UyATodAN+KgCg5eyqUCAHAJAFyegGj5QC4BKBAGhG6cADaaAb9Sc1QTIAwuUAx5GAF7NAFiagGdFfo1QAAUapAIfygHsDbQAIl8+cAoAGAAiVACZpDEA2XKAC5tAFOJDUAKHKAAH1ANOabiogBdTNjkCiqQBocoAZV0AvwmAPR1+lxdH4gA">TypeScript: 游乐场 - 一个用于 TypeScript 和 JavaScript 的在线编辑器 (typescriptlang.org)</a></p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h4><h3 id="ARRAY"><a href="#ARRAY" class="headerlink" title="ARRAY"></a>ARRAY</h3><p>数组，push </p>
+<p>numbers.push(11);</p>
+<p>numbers[numbers.length] = 10;</p>
+<p>JavaScript中unshift可以将数值插入开头</p>
+<p>要删除数组的第一个元素可以用shift方法实现number.shift();</p>
+<p>在任意位置添加或删除元素 splice（5，3）删掉5，6，7</p>
+<p>splice pop shift用这三个</p>
+<p>splice(5,0,2,3,4) 传入0代表插入 </p>
+<p>（2，3，4）</p>
+<blockquote>
+<ul>
+<li><code>concat</code></li>
+<li><code>every</code></li>
+<li><code>filter</code></li>
+<li><code>forEach</code></li>
+<li><code>join</code></li>
+<li><code>indexOf</code></li>
+<li><code>lastIndexOf</code></li>
+<li><code>map</code></li>
+<li><code>reverse</code></li>
+<li><code>slice</code></li>
+<li><code>some</code></li>
+<li><code>sort</code></li>
+<li><code>toString</code></li>
+<li><code>valueOf</code></li>
+</ul>
+</blockquote>
+<p><code>map filter reduce</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>@@iterator</code></td>
+<td align="center">返回一个包含数组键值对的迭代器对象，可以通过同步调用得到数组元素的键值对</td>
+</tr>
+<tr>
+<td align="center"><code>copyWithin</code></td>
+<td align="center">复制数组中一系列元素到同一数组指定的起始位置</td>
+</tr>
+<tr>
+<td align="center"><code>entries</code></td>
+<td align="center">返回包含数组所有键值对的<code>@@iterator</code></td>
+</tr>
+<tr>
+<td align="center"><code>includes</code></td>
+<td align="center">如果数组中存在某个元素则返回<code>true</code>，否则返回<code>false</code>。E2016新增</td>
+</tr>
+<tr>
+<td align="center"><code>find</code></td>
+<td align="center">根据回调函数给定的条件从数组中查找元素，如果找到则返回该元素</td>
+</tr>
+<tr>
+<td align="center"><code>findIndex</code></td>
+<td align="center">根据回调函数给定的条件从数组中查找元素，如果找到则返回该元素在数组中的索引</td>
+</tr>
+<tr>
+<td align="center"><code>fill</code></td>
+<td align="center">用静态值填充数组</td>
+</tr>
+<tr>
+<td align="center"><code>from</code></td>
+<td align="center">根据已有数组创建一个新数组</td>
+</tr>
+<tr>
+<td align="center"><code>keys</code></td>
+<td align="center">返回包含数组所有索引的<code>@@iterator</code></td>
+</tr>
+<tr>
+<td align="center"><code>of</code></td>
+<td align="center">根据传入的参数创建一个新数组</td>
+</tr>
+<tr>
+<td align="center"><code>values</code></td>
+<td align="center">返回包含数组中所有值的<code>@@iterator</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>concat</code></td>
+<td align="center">连接2个或更多数组，并返回结果</td>
+</tr>
+<tr>
+<td align="center"><code>every</code></td>
+<td align="center">对数组中的每个元素运行给定函数，如果该函数对每个元素都返回<code>true</code>，则返回<code>true</code></td>
+</tr>
+<tr>
+<td align="center"><code>filter</code></td>
+<td align="center">对数组中的每个元素运行给定函数，返回该函数会返回<code>true</code>的元素组成的数组</td>
+</tr>
+<tr>
+<td align="center"><code>forEach</code></td>
+<td align="center">对数组中的每个元素运行给定函数。这个方法没有返回值</td>
+</tr>
+<tr>
+<td align="center"><code>join</code></td>
+<td align="center">将所有的数组元素连接成一个字符串</td>
+</tr>
+<tr>
+<td align="center"><code>indexOf</code></td>
+<td align="center">返回第一个与给定参数相等的数组元素的索引，没有找到则返回<code>-1</code></td>
+</tr>
+<tr>
+<td align="center"><code>lastIndexOf</code></td>
+<td align="center">返回在数组中搜索到的与给定参数相等的元素的索引里最大的值</td>
+</tr>
+<tr>
+<td align="center"><code>map</code></td>
+<td align="center">对数组中的每个元素运行给定函数，返回每次函数调用的结果组成的数组</td>
+</tr>
+<tr>
+<td align="center"><code>reverse</code></td>
+<td align="center">颠倒数组中元素的顺序，原先第一个元素现在变成最后一个，同样原先的最后一个元素变成了现在的第一个</td>
+</tr>
+<tr>
+<td align="center"><code>slice</code></td>
+<td align="center">传入索引值，将数组里对应索引范围内的元素作为新数组返回</td>
+</tr>
+<tr>
+<td align="center"><code>some</code></td>
+<td align="center">对数组中的每个元素运行给定函数，如果任一元素返回<code>true</code>，则返回<code>true</code></td>
+</tr>
+<tr>
+<td align="center"><code>sort</code></td>
+<td align="center">按照字母顺序对数组排序，支持传入指定排序方法的函数作为参数</td>
+</tr>
+<tr>
+<td align="center"><code>toString</code></td>
+<td align="center">将数组作为字符串返回</td>
+</tr>
+<tr>
+<td align="center"><code>valueOf</code></td>
+<td align="center">和<code>toString</code>类似，将数组作为字符串返回</td>
+</tr>
+</tbody></table>
+<h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>FIFO先进先出</p>
+<p><img src="https://i.loli.net/2020/12/11/AShytYDs1eXqpza.png" alt="image-20201208153935864.png"></p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>已读完前面5章基础部分</p>
+<h5 id="子域"><a href="#子域" class="headerlink" title="子域"></a>子域</h5><h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><p>浏览器对象模型</p>
+<p>BOM的核心对象是window，它表示浏览器的一个实例。</p>
+<p>在全局作用域定义的变量和函数，将自动被归在window对象名下，可以使用window.age来访问age</p>
+<h4 id="全局变量与window"><a href="#全局变量与window" class="headerlink" title="全局变量与window"></a>全局变量与window</h4><p>窗口关系与框架</p>
+<!--如果页面中包含框架，则每个框架都拥有自己的window对象，并且保存在frames集合中。在frames集合中，可以通过数值索引（从0开始，从左至右，从上到下）或者框架名称来访问相应的window对象。每个window对象都有一个name属性，其中包含框架的名称。下面是一个包含框架的页面：-->
+
+<p>浏览器通过alert()、confirm()和prompt()方法可以调用系统对话框向用户显示消息。</p>
+<p>还有两个可以通过JavaScript打开的对话框，即“查找”和“打印”。这两个对话框都是<strong>异步</strong>显示的，能够将控制权立即交还给脚本。这两个对话框与用户通过浏览器菜单的“查找”和“打印”命令打开的对话框相同。而在JavaScript中则可以像下面这样通过window对象的find()和print()方法打开它们。（异步方式）</p>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a><a href="http://reader.epubee.com/books/mobile/f6/f6e74e6283600c524d627d52a324627e/text00004.html"><strong>location对象</strong></a></h4><p>​    location是最有用的BOM对象之一，它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能</p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>document</p>
+<p><a href="http://reader.epubee.com/books/mobile/f6/f6e74e6283600c524d627d52a324627e/text00004.html"><strong>10.1.2　Document类型</strong></a></p>
+<p>JavaScript通过Document类型表示文档。在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML页面。而且，document对象是window对象的一个属性，因此可以将其作为全局对象来访问。Document节点具有下列特征：</p>
+<blockquote>
+<p>□　nodeType的值为<strong>9</strong> ;</p>
+</blockquote>
+<blockquote>
+<p>□　nodeName的值为”#document”;</p>
+</blockquote>
+<blockquote>
+<p>□　nodeValue的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　parentNode的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　ownerDocument的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　其子节点可能是一个DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或Comment。</p>
+</blockquote>
+<p>Document类型可以表示HTML页面或者其他基于XML的文档。不过，最常见的应用还是作为HTMLDocument实例的document对象。通过这个文档对象，不仅可以取得与页面有关的信息，而且还能操作页面的外观及其底层结构。</p>
+]]></content>
       <categories>
-          
-          <category> 科技 </category>
-          
+        <category>科技</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>成员图</title>
-      <link href="2020/12/10/memberpic/"/>
-      <url>2020/12/10/memberpic/</url>
-      
-        <content type="html"><![CDATA[<p>这里有一些图片</p><a id="more"></a><p><strong>小林由依：</strong></p><img src="https://i.loli.net/2020/12/10/cmdVflwAbzksMGE.jpg" alt="p2546772841.jpg" style="zoom: 25%;" /><p><strong>增本绮良：</strong></p><p>PV链接：<a href="https://www.bilibili.com/video/BV1Mi4y157nN?p=13">1st single pv</a><br>请多多支持！</p><hr><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1396023735&auto=0&height=66"></iframe><hr><p><strong>梨加：</strong></p><p><a href="https://sm.ms/image/z2H3jD6pvmWaufQ" target="_blank"><img src="https://i.loli.net/2020/12/10/z2H3jD6pvmWaufQ.jpg" style="zoom:50%;"  ></a></p><hr><p><strong>小坂菜绪：</strong></p><p><a href="https://sm.ms/image/tTQpw5Rvx7oEh9N" target="_blank"><img src="https://i.loli.net/2020/12/10/tTQpw5Rvx7oEh9N.jpg" style="zoom:50%;"  ></a></p>]]></content>
-      
-      
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>成员图</title>
+    <url>/2020/12/10/memberpic/</url>
+    <content><![CDATA[<p>这里有一些图片</p>
+<a id="more"></a>
+
+<p><strong>小林由依：</strong></p>
+<img src="https://i.loli.net/2020/12/10/cmdVflwAbzksMGE.jpg" alt="p2546772841.jpg" style="zoom: 25%;" />
+
+<p><strong>增本绮良：</strong></p>
+<p>PV链接：<a href="https://www.bilibili.com/video/BV1Mi4y157nN?p=13">1st single pv</a><br>请多多支持！</p>
+<hr>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1396023735&auto=0&height=66"></iframe>
+
+<hr>
+<p><strong>梨加：</strong></p>
+<p><a href="https://sm.ms/image/z2H3jD6pvmWaufQ" target="_blank"><img src="https://i.loli.net/2020/12/10/z2H3jD6pvmWaufQ.jpg" style="zoom:50%;"  ></a></p>
+<hr>
+<p><strong>小坂菜绪：</strong></p>
+<p><a href="https://sm.ms/image/tTQpw5Rvx7oEh9N" target="_blank"><img src="https://i.loli.net/2020/12/10/tTQpw5Rvx7oEh9N.jpg" style="zoom:50%;"  ></a></p>
+]]></content>
       <categories>
-          
-          <category> 图片 </category>
-          
+        <category>图片</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 坂道 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo建立Blog &amp; GitHub Page</title>
-      <link href="2020/12/09/%E5%88%A9%E7%94%A8hexo%E5%BB%BA%E7%AB%8Bblog%E5%B9%B6%E5%9C%A8github%20page%E4%B8%8A%E5%AE%8C%E6%88%90%E9%83%A8%E7%BD%B2/"/>
-      <url>2020/12/09/%E5%88%A9%E7%94%A8hexo%E5%BB%BA%E7%AB%8Bblog%E5%B9%B6%E5%9C%A8github%20page%E4%B8%8A%E5%AE%8C%E6%88%90%E9%83%A8%E7%BD%B2/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>本文将描述自己在创建个人blog时的走过的坑</p><p>希望能对读者有所帮助`</p></blockquote><a id="more"></a><hr><p>[TOC]</p><h3 id="1-hexo建立blog"><a href="#1-hexo建立blog" class="headerlink" title="1.hexo建立blog"></a>1.hexo建立blog</h3><p><strong><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></strong></p><p>(这是hexo官方中文文档)</p><p><em>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</em></p><p>首先你需要按照文档上的说明按顺序安装好下面的这三个环境</p><ol><li>**Node.js **</li><li>   <strong>git</strong>  </li><li>   <strong>hexo-cli</strong></li></ol><p>接下来我们在一个文件夹中建立Hexo库，进入该目录的命令行窗口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo </span><br></pre></td></tr></table></figure><hr><h3 id="2-在github-page上完成部署"><a href="#2-在github-page上完成部署" class="headerlink" title="2.在github page上完成部署"></a>2.在github page上完成部署</h3><p>在github上建立一个仓库，命名为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yourname.github-io</span><br></pre></td></tr></table></figure><p>通过这种命名方式可以建立一个拥有GITHUB PAGE域名的静态网页；</p><p>在<strong>setting</strong>界面中，绑定利用GIT BASH生成的SSH KEY，实现Github与自己电脑的身份认证；</p><p>在配置文件中的**#deploy**下添加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https:&#x2F;&#x2F;github.com&#x2F;yourname&#x2F;yourname.github.io</span><br><span class="line">branch: gh-pages&#96;&#96;&#96;</span><br></pre></td></tr></table></figure><p>清理缓存，将Hexo搭建的blog部署到GitHub上；</p><p><code>hexo clean &amp;&amp; hexo deploy</code></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>下载 Hinata/Sakurazaka 46 Blog图</title>
-      <link href="2020/12/09/%E7%88%AC%E5%8F%96%E8%93%9D%E7%99%BD%E5%9D%82%E7%9A%84blog%E5%9B%BE/"/>
-      <url>2020/12/09/%E7%88%AC%E5%8F%96%E8%93%9D%E7%99%BD%E5%9D%82%E7%9A%84blog%E5%9B%BE/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前可以使用这段代码爬取日向坂46（hinatazaka46.com）、樱坂46(keyakizaka46.com)的成员blog图。</p><a id="more"></a><hr><p><strong>注意</strong><br>        代码中最开始的“初始设置”部分是需要使用者自定义的，比如：设置爬取的成员的名字（如katoshi、kosaka等等），还需要设置url，这需要使用者进入蓝团官网或者白团官网的成员blog界面复制上方的网址并贴在url = 后面，</p><p>​    （PS：由于同一个成员的blog是可以翻页的，所以需要不同的页的url来获取对应页的图片，此时注意不仅要改url名还要改name，可以改成如kosaka和kosaka_2_）</p><hr><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>这是我下载了几个成员之后的状态<br><img src="https://img-blog.csdnimg.cn/20201122153229172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2ODU0Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这就是我上面说的用kosaka_2_命名name的效果<br><img src="https://img-blog.csdnimg.cn/2020112215330447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2ODU0Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="这是kosaka第二页的内容"></p><p><strong>代码如下</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os,sys,time,json,time</span><br><span class="line"><span class="keyword">import</span> socket,random,hashlib</span><br><span class="line"><span class="keyword">from</span> concurrent.futures.process <span class="keyword">import</span> ProcessPoolExecutor</span><br><span class="line"><span class="keyword">import</span> requests,configparser</span><br><span class="line"><span class="keyword">import</span> json,re</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始设置</span></span><br><span class="line">name = <span class="string">&quot;katoshi&quot;</span> <span class="comment">#想要将图片取的名字</span></span><br><span class="line">os.makedirs(<span class="string">&#x27;./Picture/&#x27;</span>+name, exist_ok=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#在目录下创建一个文件夹用于保存图片，这里以Picture为例子</span></span><br><span class="line">url = <span class="string">&quot;https://www.hinatazaka46.com/s/official/diary/member/list?ima=0000&amp;ct=5&quot;</span><span class="comment"># 加藤史</span></span><br><span class="line"><span class="comment">#url = &quot;https://www.keyakizaka46.com/s/k46o/diary/member/list?ima=0000&amp;ct=43&quot;</span></span><br><span class="line"><span class="comment">#设置想要爬取的网站网址</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">path=os.getcwd()+<span class="string">&#x27;\\Picture\\&#x27;</span>+name+<span class="string">&quot;\\&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpicurl</span>():</span></span><br><span class="line">    jpglist =[]</span><br><span class="line">    <span class="comment">#设置url地址为想要爬取的图片</span></span><br><span class="line">    html = requests.get(url).text</span><br><span class="line">    pic_url = re.findall(<span class="string">&#x27;img src=&quot;(.*?)&quot;&#x27;</span>, html, re.S)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    print(<span class="built_in">len</span>(pic_url))</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> pic_url:</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&quot;jpg&quot;</span> <span class="keyword">in</span> key):</span><br><span class="line">            jpglist.append(key)</span><br><span class="line">            count=count+<span class="number">1</span></span><br><span class="line">    print(<span class="string">&quot;全部张数为：&quot;</span>+<span class="built_in">str</span>(count)+<span class="string">&quot;开始下载喽&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> jpglist</span><br><span class="line">    <span class="comment">#清洗只留下jpg文件url</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span>(<span class="params">pic_url</span>):</span></span><br><span class="line">    num=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> pic_url:</span><br><span class="line">        print(i)</span><br><span class="line">        r = requests.request(<span class="string">&#x27;get&#x27;</span>, i)  <span class="comment"># 获取网页</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + name + <span class="built_in">str</span>(num) + <span class="string">&#x27;.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开写入到path路径里-二进制文件，返回的句柄名为f</span></span><br><span class="line">            f.write(r.content)  <span class="comment"># 往f里写入r对象的二进制文件</span></span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">        print(<span class="string">&quot;下载第&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;张图片成功！当前进度：&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;/&quot;</span>+<span class="built_in">str</span>(<span class="built_in">len</span>(pic_url)))</span><br><span class="line">        num = num+<span class="number">1</span></span><br><span class="line"><span class="comment">#main</span></span><br><span class="line">pic_url = getpicurl()</span><br><span class="line">download(pic_url)</span><br><span class="line">print(<span class="built_in">type</span>(pic_url))</span><br><span class="line">print(<span class="string">&quot;下载完毕喽，祝您开心&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+      <tags>
+        <tag>坂道</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo建立Blog &amp; GitHub Page</title>
+    <url>/2020/12/09/%E5%88%A9%E7%94%A8hexo%E5%BB%BA%E7%AB%8Bblog%E5%B9%B6%E5%9C%A8github%20page%E4%B8%8A%E5%AE%8C%E6%88%90%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<blockquote>
+<p>本文将描述自己在创建个人blog时的走过的坑</p>
+<p>希望能对读者有所帮助`</p>
+</blockquote>
+<a id="more"></a>
+
+<hr>
+<p>[TOC]</p>
+<h3 id="1-hexo建立blog"><a href="#1-hexo建立blog" class="headerlink" title="1.hexo建立blog"></a>1.hexo建立blog</h3><p><strong><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></strong></p>
+<p>(这是hexo官方中文文档)</p>
+<p><em>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</em></p>
+<p>首先你需要按照文档上的说明按顺序安装好下面的这三个环境</p>
+<ol>
+<li>**Node.js **</li>
+<li>   <strong>git</strong>  </li>
+<li>   <strong>hexo-cli</strong></li>
+</ol>
+<p>接下来我们在一个文件夹中建立Hexo库，进入该目录的命令行窗口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo </span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-在github-page上完成部署"><a href="#2-在github-page上完成部署" class="headerlink" title="2.在github page上完成部署"></a>2.在github page上完成部署</h3><p>在github上建立一个仓库，命名为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yourname.github-io</span><br></pre></td></tr></table></figure>
+<p>通过这种命名方式可以建立一个拥有GITHUB PAGE域名的静态网页；</p>
+<p>在<strong>setting</strong>界面中，绑定利用GIT BASH生成的SSH KEY，实现Github与自己电脑的身份认证；</p>
+<p>在配置文件中的**#deploy**下添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https:&#x2F;&#x2F;github.com&#x2F;yourname&#x2F;yourname.github.io</span><br><span class="line">branch: gh-pages&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+
+<p>清理缓存，将Hexo搭建的blog部署到GitHub上；</p>
+<p><code>hexo clean &amp;&amp; hexo deploy</code></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>下载 Hinata/Sakurazaka 46 Blog图</title>
+    <url>/2020/12/09/%E7%88%AC%E5%8F%96%E8%93%9D%E7%99%BD%E5%9D%82%E7%9A%84blog%E5%9B%BE/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目前可以使用这段代码爬取日向坂46（hinatazaka46.com）、樱坂46(keyakizaka46.com)的成员blog图。</p>
+<a id="more"></a>
+
+<hr>
+<p><strong>注意</strong><br>        代码中最开始的“初始设置”部分是需要使用者自定义的，比如：设置爬取的成员的名字（如katoshi、kosaka等等），还需要设置url，这需要使用者进入蓝团官网或者白团官网的成员blog界面复制上方的网址并贴在url = 后面，</p>
+<p>​    （PS：由于同一个成员的blog是可以翻页的，所以需要不同的页的url来获取对应页的图片，此时注意不仅要改url名还要改name，可以改成如kosaka和kosaka_2_）</p>
+<hr>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>这是我下载了几个成员之后的状态<br><img src="https://img-blog.csdnimg.cn/20201122153229172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2ODU0Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>这就是我上面说的用kosaka_2_命名name的效果<br><img src="https://img-blog.csdnimg.cn/2020112215330447.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2ODU0Ng==,size_16,color_FFFFFF,t_70#pic_center" alt="这是kosaka第二页的内容"></p>
+<p><strong>代码如下</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os,sys,time,json,time</span><br><span class="line"><span class="keyword">import</span> socket,random,hashlib</span><br><span class="line"><span class="keyword">from</span> concurrent.futures.process <span class="keyword">import</span> ProcessPoolExecutor</span><br><span class="line"><span class="keyword">import</span> requests,configparser</span><br><span class="line"><span class="keyword">import</span> json,re</span><br><span class="line"></span><br><span class="line"><span class="comment">#初始设置</span></span><br><span class="line">name = <span class="string">&quot;katoshi&quot;</span> <span class="comment">#想要将图片取的名字</span></span><br><span class="line">os.makedirs(<span class="string">&#x27;./Picture/&#x27;</span>+name, exist_ok=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#在目录下创建一个文件夹用于保存图片，这里以Picture为例子</span></span><br><span class="line">url = <span class="string">&quot;https://www.hinatazaka46.com/s/official/diary/member/list?ima=0000&amp;ct=5&quot;</span><span class="comment"># 加藤史</span></span><br><span class="line"><span class="comment">#url = &quot;https://www.keyakizaka46.com/s/k46o/diary/member/list?ima=0000&amp;ct=43&quot;</span></span><br><span class="line"><span class="comment">#设置想要爬取的网站网址</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">path=os.getcwd()+<span class="string">&#x27;\\Picture\\&#x27;</span>+name+<span class="string">&quot;\\&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getpicurl</span>():</span></span><br><span class="line">    jpglist =[]</span><br><span class="line">    <span class="comment">#设置url地址为想要爬取的图片</span></span><br><span class="line">    html = requests.get(url).text</span><br><span class="line">    pic_url = re.findall(<span class="string">&#x27;img src=&quot;(.*?)&quot;&#x27;</span>, html, re.S)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    print(<span class="built_in">len</span>(pic_url))</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> pic_url:</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&quot;jpg&quot;</span> <span class="keyword">in</span> key):</span><br><span class="line">            jpglist.append(key)</span><br><span class="line">            count=count+<span class="number">1</span></span><br><span class="line">    print(<span class="string">&quot;全部张数为：&quot;</span>+<span class="built_in">str</span>(count)+<span class="string">&quot;开始下载喽&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> jpglist</span><br><span class="line">    <span class="comment">#清洗只留下jpg文件url</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span>(<span class="params">pic_url</span>):</span></span><br><span class="line">    num=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> pic_url:</span><br><span class="line">        print(i)</span><br><span class="line">        r = requests.request(<span class="string">&#x27;get&#x27;</span>, i)  <span class="comment"># 获取网页</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path + name + <span class="built_in">str</span>(num) + <span class="string">&#x27;.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开写入到path路径里-二进制文件，返回的句柄名为f</span></span><br><span class="line">            f.write(r.content)  <span class="comment"># 往f里写入r对象的二进制文件</span></span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">        print(<span class="string">&quot;下载第&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;张图片成功！当前进度：&quot;</span>+<span class="built_in">str</span>(num)+<span class="string">&quot;/&quot;</span>+<span class="built_in">str</span>(<span class="built_in">len</span>(pic_url)))</span><br><span class="line">        num = num+<span class="number">1</span></span><br><span class="line"><span class="comment">#main</span></span><br><span class="line">pic_url = getpicurl()</span><br><span class="line">download(pic_url)</span><br><span class="line">print(<span class="built_in">type</span>(pic_url))</span><br><span class="line">print(<span class="string">&quot;下载完毕喽，祝您开心&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-          
-          <category> 科技 </category>
-          
+        <category>科技</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2020/12/09/hello-world/"/>
-      <url>2020/12/09/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>这是我的第一篇博客，大家好，</p><p>很高兴能在这里分享我的学习感悟；</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/12/09/hello-world/</url>
+    <content><![CDATA[<p>这是我的第一篇博客，大家好，</p>
+<p>很高兴能在这里分享我的学习感悟；</p>
+]]></content>
+  </entry>
 </search>

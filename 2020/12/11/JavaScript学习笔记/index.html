@@ -23,12 +23,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yuristry.fun","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="好记性不如烂笔头所以来记录下自己的JavaScript学习旅程">
+<meta name="description" content="好记性不如烂笔头   所以来记录下自己的JavaScript学习旅程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript学习笔记">
 <meta property="og:url" content="http://yuristry.fun/2020/12/11/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="予黎 Yuristry">
-<meta property="og:description" content="好记性不如烂笔头所以来记录下自己的JavaScript学习旅程">
+<meta property="og:description" content="好记性不如烂笔头   所以来记录下自己的JavaScript学习旅程">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/12/11/UqX3tiKs2l4uv1f.png">
 <meta property="og:image" content="https://i.loli.net/2020/12/11/eBf4Tn3woR1drYa.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/12/11/amszWdjNCou153h.png">
 <meta property="og:image" content="https://i.loli.net/2020/12/11/AShytYDs1eXqpza.png">
 <meta property="article:published_time" content="2020-12-11T12:30:18.959Z">
-<meta property="article:modified_time" content="2020-12-12T05:16:57.249Z">
+<meta property="article:modified_time" content="2020-12-12T14:06:15.518Z">
 <meta property="article:author" content="Yuristry">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -203,7 +203,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">好记性不如烂笔头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">模板字面量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8arguments"><span class="nav-number">5.</span> <span class="nav-text">使用arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%B1%95%E5%BC%80%E5%92%8C%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">声明展开和剩余参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES2015%E7%9A%84%E4%B8%80%E4%BA%9B%E6%94%B9%E8%BF%9B"><span class="nav-number">7.</span> <span class="nav-text">ES2015的一些改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-number">8.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEscript%E7%9A%84%E6%96%B0%E7%89%B9%E7%82%B9"><span class="nav-number">9.</span> <span class="nav-text">TYPEscript的新特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">9.1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-number">9.2.</span> <span class="nav-text">泛型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARRAY"><span class="nav-number">10.</span> <span class="nav-text">ARRAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97"><span class="nav-number">11.</span> <span class="nav-text">栈与队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">12.</span> <span class="nav-text">链表</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">&#x3D;&#x3D;与&#x3D;&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">模板字面量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8arguments"><span class="nav-number">4.</span> <span class="nav-text">使用arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%B1%95%E5%BC%80%E5%92%8C%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">声明展开和剩余参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES2015%E7%9A%84%E4%B8%80%E4%BA%9B%E6%94%B9%E8%BF%9B"><span class="nav-number">6.</span> <span class="nav-text">ES2015的一些改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-number">7.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEscript%E7%9A%84%E6%96%B0%E7%89%B9%E7%82%B9"><span class="nav-number">8.</span> <span class="nav-text">TYPEscript的新特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">8.1.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-number">8.2.</span> <span class="nav-text">泛型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARRAY"><span class="nav-number">9.</span> <span class="nav-text">ARRAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97"><span class="nav-number">10.</span> <span class="nav-text">栈与队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">11.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%90%E5%9F%9F"><span class="nav-number">11.0.1.</span> <span class="nav-text">子域</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOM"><span class="nav-number">12.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8Ewindow"><span class="nav-number">12.1.</span> <span class="nav-text">全局变量与window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="nav-number">12.2.</span> <span class="nav-text">location对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">13.</span> <span class="nav-text">DOM</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -313,7 +313,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-12-12 13:16:57" itemprop="dateModified" datetime="2020-12-12T13:16:57+08:00">2020-12-12</time>
+        <time title="修改时间：2020-12-12 22:06:15" itemprop="dateModified" datetime="2020-12-12T22:06:15+08:00">2020-12-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -349,14 +349,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.3k</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -367,8 +367,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3>好记性不如烂笔头</h3>所以来记录下自己的JavaScript学习旅程
-
+        <blockquote>
+<p>好记性不如烂笔头</p>
+</blockquote>
+<blockquote>
+<p>所以来记录下自己的JavaScript学习旅程</p>
+</blockquote>
 <a id="more"></a>
 
 <h3>==与===</h3>
@@ -561,6 +565,37 @@
 <h3 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h3><p>FIFO先进先出</p>
 <p><img src="https://i.loli.net/2020/12/11/AShytYDs1eXqpza.png" alt="image-20201208153935864.png"></p>
 <h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>已读完前面5章基础部分</p>
+<h5 id="子域"><a href="#子域" class="headerlink" title="子域"></a>子域</h5><h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><p>浏览器对象模型</p>
+<p>BOM的核心对象是window，它表示浏览器的一个实例。</p>
+<p>在全局作用域定义的变量和函数，将自动被归在window对象名下，可以使用window.age来访问age</p>
+<h4 id="全局变量与window"><a href="#全局变量与window" class="headerlink" title="全局变量与window"></a>全局变量与window</h4><p>窗口关系与框架</p>
+<!--如果页面中包含框架，则每个框架都拥有自己的window对象，并且保存在frames集合中。在frames集合中，可以通过数值索引（从0开始，从左至右，从上到下）或者框架名称来访问相应的window对象。每个window对象都有一个name属性，其中包含框架的名称。下面是一个包含框架的页面：-->
+
+<p>浏览器通过alert()、confirm()和prompt()方法可以调用系统对话框向用户显示消息。</p>
+<p>还有两个可以通过JavaScript打开的对话框，即“查找”和“打印”。这两个对话框都是<strong>异步</strong>显示的，能够将控制权立即交还给脚本。这两个对话框与用户通过浏览器菜单的“查找”和“打印”命令打开的对话框相同。而在JavaScript中则可以像下面这样通过window对象的find()和print()方法打开它们。（异步方式）</p>
+<h4 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a><a target="_blank" rel="noopener" href="http://reader.epubee.com/books/mobile/f6/f6e74e6283600c524d627d52a324627e/text00004.html"><strong>location对象</strong></a></h4><p>​    location是最有用的BOM对象之一，它提供了与当前窗口中加载的文档有关的信息，还提供了一些导航功能</p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>document</p>
+<p><a target="_blank" rel="noopener" href="http://reader.epubee.com/books/mobile/f6/f6e74e6283600c524d627d52a324627e/text00004.html"><strong>10.1.2　Document类型</strong></a></p>
+<p>JavaScript通过Document类型表示文档。在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML页面。而且，document对象是window对象的一个属性，因此可以将其作为全局对象来访问。Document节点具有下列特征：</p>
+<blockquote>
+<p>□　nodeType的值为<strong>9</strong> ;</p>
+</blockquote>
+<blockquote>
+<p>□　nodeName的值为”#document”;</p>
+</blockquote>
+<blockquote>
+<p>□　nodeValue的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　parentNode的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　ownerDocument的值为null;</p>
+</blockquote>
+<blockquote>
+<p>□　其子节点可能是一个DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或Comment。</p>
+</blockquote>
+<p>Document类型可以表示HTML页面或者其他基于XML的文档。不过，最常见的应用还是作为HTMLDocument实例的document对象。通过这个文档对象，不仅可以取得与页面有关的信息，而且还能操作页面的外观及其底层结构。</p>
 
     </div>
 
